@@ -1,0 +1,81 @@
+.banner {
+    background: var(--gradiente-a);
+    color: var(--cor-texto-b);
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.banner__titulo {
+    font-size: var(--fonte-tam-g);
+    font-weight: 700;
+}
+
+.banner__texto {
+    font-size: var(--fonte-tam-m);
+    font-weight: 400;
+}
+
+.banner__pesquisa {
+    border: solid 1px var(--cor-texto-b);
+    border-radius: 10rem;
+    width: 100%;
+    background-color: transparent;
+    text-decoration: none; /*remover efeitos padrão*/
+    outline: none; /*remover efeitos padrão*/
+    color: var(--cor-texto-b);
+    text-align: center;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+.banner__pesquisa::placeholder { /*para editar o placeholder da pesquisa*/
+    font-size: var(--fonte-tam-p);
+    font-weight: 300;
+    color: var(--cor-texto-b);
+    text-align: center;
+    background: url("../img/Lupa.svg") no-repeat; /*ícone da lupa*/
+    background-size: 1rem; /*tamanho da lupa*/
+    background-position: 1rem; /*posição da lupa*/
+}
+
+/*responsividade*/
+
+@media screen and (min-width: 1024px) {
+    .banner__titulo {
+        font-size: var(--fonte-tam-gg);
+        font-weight: 700;
+    }
+    .banner {
+        padding: 5rem 2rem;
+        gap: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner__pesquisa {
+        width: 50%;
+        padding: 1rem;
+    }
+    .banner__pesquisa::placeholder { /*para editar o placeholder da pesquisa*/
+        background-size: 1rem; /*tamanho da lupa*/
+        background-position: 6rem; /*posição da lupa*/
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .banner__pesquisa {
+        width: 33%;
+    }
+    .banner__pesquisa::placeholder { /*para editar o placeholder da pesquisa*/
+        background-position: 10rem; /*posição da lupa*/
+    }
+    .banner__pesquisa:hover{
+        scale: 1.05;
+    }
+}
+
+
+

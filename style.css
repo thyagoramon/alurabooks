@@ -1,0 +1,38 @@
+@import url("styles/header.css");
+@import url("styles/banner.css");
+@import url("styles/sections.css");
+@import url("styles/topicos.css");
+@import url("styles/contato.css");
+@import url("styles/footer.css");
+
+:root {
+    --cor-background: #EBECEE;
+    --cor-elementos: #fff;
+    --cor-destaque-a: #EB9B00;
+    --cor-destaque-b: #002F52;
+    --cor-texto-a: #000;
+    --cor-texto-b: #fff;
+    --cor-texto-c: #858585;
+    --gradiente-a: linear-gradient(to right, #002F52, #326589);
+    --fonte: "Poppins", serif;
+    --fonte-tam-24: 1.5rem;
+    --fonte-tam-gg: 1.875rem; /*30px*/
+    --fonte-tam-g: 1.125rem; /*18px*/
+    --fonte-tam-m: 1rem; /*16px*/
+    --fonte-tam-p: 0.875rem; /*14px*/
+}
+
+body {
+    background-color: var(--cor-background);
+    font-family: var(--fonte);
+    font-weight: 400;
+    font-size: var(--fonte-tam-p);
+    color: var(--cor-texto-a);
+}
+
+a {
+    color: inherit;
+}
+a:visited{ /*impede que a cor do link mude ao clicar*/
+    color: inherit;
+}

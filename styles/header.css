@@ -1,0 +1,180 @@
+.cabecalho {
+    background-color: var(--cor-elementos);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 5rem;
+    position: relative; /*permite mover os elementos internos usando position: absolute;*/
+}
+
+.container  {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/Menu.svg"); /*imagem para o menu*/
+    display: inline-block; /*permite os ajustes de altura e largura*/
+    background-repeat: no-repeat; /*impede a imagem de se repetir*/
+    background-position: center; /*posiciona a imagem no centro*/
+    cursor: pointer; /*faz com que apareça a mãozinha ao posicionar o cursor*/
+}
+
+.munu__check:checked + .menu__label .menu { /*altera a imagem do menu ao abrir*/
+    background-image: url("../img/MenuAberto.svg");
+    background-color: var(--cor-destaque-b);
+}
+
+.cabecalho__item {
+    padding: 0.8rem;
+    display: flex;
+    align-items: end;
+    gap: 0.5rem;
+    transition: 0.3s;
+}
+
+.munu__check { /*oculta a checkbox*/
+    display: none;
+}
+
+.munu__check:checked ~ .menu__lista { /*realiza ação quando o menu for clicado*/
+    display: block; /*mostra a lista*/
+}
+
+.menu__lista{
+    display: none; /*oculta a lista*/
+    position: absolute; /*permite posicionar o elemeto em relação ao pai*/
+    top: 100%;
+    left: 0;
+    background-color: var(--cor-elementos);
+    padding: 1.5rem;
+    font-size: var(--fonte-tam-m);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /*sombra*/
+}
+
+.menu__lista__categoria {
+    color: var(--cor-destaque-a);
+    font-weight: 700;
+    padding: 0.5rem;
+}
+
+.menu__lista__item {
+    color: var(--cor-destaque-b);
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+/*responsividade*/
+
+.cabecalho__titulo{ /*oculta o elemento na verção mobile*/
+    display: none;
+}
+.cabecalho__opcoes{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .menu {
+        display: none;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .container {
+        gap: 2rem;
+    }
+
+    .cabecalho__titulo {
+        display: block; /*exibe o elemento na versão maior*/
+        font-size: var(--fonte-tam-gg);
+        font-family: "Josefin Sans", sans-serif;
+        color: var(--cor-texto-a);
+    }
+    .cabecalho__titulo--negrito {
+        font-weight: 700;
+    } 
+
+    .cabecalho__opcoes{
+        display: block;
+    }
+    .cabecalho__opcoes__lista{
+        display: flex;
+        gap: 2rem;
+        text-transform: uppercase; /*deixa o texto em maiusculas*/
+        font-size: var(--fonte-tam-m);
+    }
+    .cabecalho__opcoes__item{
+        transition: 0.3s;
+        color: var(--cor-destaque-b);
+    }
+    .cabecalho__item__favoritos {
+        display: none;
+    }
+    
+    /*menu*/
+    
+    .munu__check--1024 { /*oculta a checkbox*/
+        display: none;
+    }    
+    .munu__check--1024:checked ~ .menu__lista--1024 { /*realiza ação quando o menu for clicado*/
+        display: block; /*mostra a lista*/
+    }  
+    .munu__check--1024:checked + .menu-1024__label .cabecalho__opcoes__item {
+        font-weight: 700;
+        color: var(--cor-destaque-a);
+    }
+    .menu__lista--1024{
+        display: none; /*oculta a lista*/
+        position: absolute; /*permite posicionar o elemeto em relação ao pai*/
+        top: 100%;
+        background-color: var(--cor-elementos);
+        padding: 1.5rem;
+        font-size: var(--fonte-tam-m);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /*sombra*/
+    }
+}
+
+.cabecalho__item__texto{
+    display: none;
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho{
+        justify-content: space-between;
+        padding: 0 3rem;
+    }
+    .cabecalho__site{
+        gap: 0;
+    }
+    .cabecalho__item{
+        align-items: center;
+    }
+    .cabecalho__item__texto{
+        display: block;
+        font-size: var(--fonte-tam-g);
+        color: var(--cor-destaque-b);
+    }
+    .cabecalho__logo{
+        align-items: end;
+    }
+    .cabecalho__opcoes{
+        margin-right: auto; /*move para a direita ignorando o space betwen*/
+    }
+    .cabecalho__item:hover {
+        scale: 1.1;
+    }
+    .menu__lista__item:hover {
+        scale: 1.1;
+        color: var(--cor-destaque-a);
+    }
+    .cabecalho__opcoes__item:hover {
+        scale: 1.1;
+    }
+}
